@@ -75,7 +75,10 @@ function insertBBBModal() {
   showModal("insert-bbb").setProperties({
     toolbarEvent: this.get("toolbarEvent"),
   });
+  console.log("Test Run");
 }
+
+console.log("Test");
 
 export default {
   name: "insert-bbb",
@@ -98,7 +101,7 @@ export default {
           icon: "video",
           label: "bbb.composer_title",
           action: (toolbarEvent) =>
-            modal.show(InsertBBBModal, { model: { toolbarEvent } }),
+            modal.show(insertBBBModal, { model: { toolbarEvent } }),
         });
       }
     });
