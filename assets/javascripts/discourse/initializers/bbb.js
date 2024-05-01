@@ -86,6 +86,9 @@ export default {
       const currentUser = api.getCurrentUser();
       const siteSettings = api.container.lookup("site-settings:main");
       const modal = api.container.lookup("service:modal");
+      console.log("Modal service:", modal);
+      console.log("Site Settings:", siteSettings);
+      console.log("Current User:", currentUser);
 
       api.decorateCooked(attachBBB, {
         id: "discourse-bbb",
