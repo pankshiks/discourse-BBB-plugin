@@ -71,15 +71,6 @@ function attachBBB($elem, helper) {
   }
 }
 
-function insertBBBModal() {
-  showModal("insert-bbb").setProperties({
-    toolbarEvent: this.get("toolbarEvent"),
-  });
-  console.log("Test Run");
-}
-
-console.log("Test");
-
 export default {
   name: "insert-bbb",
 
@@ -100,8 +91,11 @@ export default {
         api.addComposerToolbarPopupMenuOption({
           icon: "video",
           label: "bbb.composer_title",
-          action: (toolbarEvent) =>
-            modal.show(insertBBBModal, { model: { toolbarEvent } }),
+          action: (toolbarEvent) => {
+            showModal("insert-bbb").setProperties({
+              toolbarEvent,
+            });
+          },
         });
       }
     });
