@@ -71,6 +71,12 @@ function attachBBB($elem, helper) {
   }
 }
 
+function insertBBBModal() {
+  showModal("insert-bbb").setProperties({
+    toolbarEvent: this.get("toolbarEvent"),
+  });
+}
+
 export default {
   name: "insert-bbb",
 
@@ -91,11 +97,10 @@ export default {
         api.addComposerToolbarPopupMenuOption({
           icon: "video",
           label: "bbb.composer_title",
-          action: (toolbarEvent) => {
+          action: (toolbarEvent) =>
             showModal("insert-bbb").setProperties({
-              toolbarEvent,
-            });
-          },
+              toolbarEvent: this.get("toolbarEvent"),
+            })
         });
       }
     });
